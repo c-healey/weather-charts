@@ -1,0 +1,139 @@
+#root{
+    width:100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5em 2em;
+    letter-spacing: -0.011em;
+    
+    font-size: 16px;
+    color: #34495e;
+    background: #f8f9fa;
+}
+
+svg {
+    stroke-linecap: round;
+    overflow: visible;
+}
+
+.line {
+    fill: none;
+    stroke: #34495e;
+    stroke-width: 2;
+    /* fill: #34495e; */
+}
+
+.area {
+    fill: #34495e;
+    fill-opacity: 0.3;
+}
+
+.dot {
+    fill: #8395a7 !important;
+}
+
+.y-axis line,
+.y-axis .domain {
+    display: none;
+}
+.y-axis .tick {
+    fill: #34495e;
+    font-size: 1.6em;
+}
+
+.y-axis-label-suffix {
+    fill: #34495e;
+    text-anchor: start;
+}
+
+.y-axis-label-mean {
+    text-anchor: end;
+    font-size: 0.8em;
+    opacity: 0.5;
+}
+
+.y-axis-tick {
+    stroke: #c8d6e5;
+    stroke-width: 1px;
+}
+
+.season-mean {
+    stroke: #8395a7 !important;
+    stroke-width: 2px !important;
+}
+
+.y-axis-label-2 {
+    fill: #34495e;
+    font-size: 0.9em;
+    font-size: 1.4em;
+    /* dominant-baseline: middle; */
+    text-anchor: middle;
+    transform: rotate(-90deg);
+}
+
+.season-mean-label {
+    fill: #34495e !important;
+    text-anchor: end;
+    /* dominant-baseline: middle; */
+    font-size: 0.8em;
+    opacity: 0.5;
+}
+
+.season-mean-background {
+    fill: #f8f9fa;
+}
+
+.season-label  {
+    font-size: 1.1em;
+    /* fill: #34495e;
+    text-anchor: middle; */
+}
+
+.season.Spring, .season.Fall {
+    fill: #fff;
+    fill-opacity: 0.1;
+}
+.season.Winter { fill: #2e86de; fill-opacity: 0.1; }
+.season.Summer { fill: #10ac84; fill-opacity: 0.1; }
+.Timeline,
+.Humidity {
+    height: 300px;
+    min-width: 500px;
+    width: 100%;
+    margin-bottom: 2em;
+}
+.Humidity{
+    height:500px;
+}
+
+.Histogram {
+    height: 500px;
+    flex: 1;
+    min-width: 500px;
+    overflow: hidden;
+}
+
+.ScatterPlot {
+    height: 500px;
+    width: 500px;
+    margin-right: 2em;
+}
+
+.App__charts {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: -0.5em;
+}
+
+.Timeline,
+.ScatterPlot,
+.Histogram,
+.Humidity {
+    background: white;
+    padding: 0.6em 1em;
+    margin: 0.5em;
+}
