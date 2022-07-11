@@ -34,14 +34,6 @@ const Humidity = ({ data, lineData, xAccessor, yAccessor }) => {
     .domain(d3.extent(data, xAccessor))
     .range([0, dimensions.boundedWidth]);
 
-  // draw the line
-  //   const areaGenerator = d3
-  //     .area()
-  //     .x((d) => xScale(xAccessor(d)))
-  //     .y0(dimensions.boundedHeight / 2)
-  //     .y1((d) => yScale(yAccessor(d)))
-  //     .curve(d3.curveBasis);
-
   const lineGenerator = d3
     .area()
     .x((d) => xScale(xAccessor(d)))
@@ -82,10 +74,6 @@ const Humidity = ({ data, lineData, xAccessor, yAccessor }) => {
 
   const seasonOffset = 10;
 
-  //   const seasonXScale = d3
-  //     .scaleBand()
-  //     .domain(seasonNames)
-  //     .range([0, dimensions.boundedWidth]);
   return (
     <div className="Humidity Timeline" ref={ref}>
       <Chart dimensions={dimensions}>
@@ -93,24 +81,13 @@ const Humidity = ({ data, lineData, xAccessor, yAccessor }) => {
           <Gradient id={gradientId} colors={gradientColors} x2="0" y2="100%" />
         </defs>
 
-        <Axis
-          dimensions={dimensions}
-          dimension="y"
-          scale={yScale}
-          //   numberofticks={3}
-        />
-        {/* <Axis
-          dimensions={dimensions}
-          dimension="x"
-          scale={seasonXScale}
-          label={"Seasons"}
-          className={"season-label"}
-          //   font-size={"1.1em"}
-        /> */}
+        <Axis dimensions={dimensions} dimension="y" scale={yScale} />
+
         {seasonsData.map((d, i) => (
           <Text
+            key={i}
             text={d.name}
-            x={(d) => xScale(d.start) + (xScale(d.end) - xScale(d.start)) / 2}
+            x={xScale(d.start) + (xScale(d.end) - xScale(d.start)) / 2}
             y={dimensions.boundedHeight + 30}
             className={"season-label"}
           />
